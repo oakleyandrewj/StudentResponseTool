@@ -1,0 +1,22 @@
+table {
+    width: 100%;
+    height: 300px;
+  }
+
+  #redButton {
+    background-color: red;
+    width:100%;
+    height:100%;
+  }
+
+  #amberButton {
+    background-color: orange;
+    width:100%;
+    height:100%;
+  }
+
+  #greenButton {
+    background-color: green;
+    width:100%;    
+    height:100%;
+  }
