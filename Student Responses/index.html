@@ -3,6 +3,7 @@
 <head>
 <title>How was your lesson today?</title>
 <script src="script.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <link rel="stylesheet" href="style.css">
 </head>
 <body id ="myBody">
@@ -10,13 +11,12 @@
 <h1>How was the lesson?</h1>
 
 <table>
-<th><button onclick="addRed()" id="redButton">I didnt understand this lesson</button></th>
-<th><button onclick="addAmber()" id= "amberButton">I understood some of this lesson</button></th>
-<th><button onclick="addGreen()" id = "greenButton">I understood all of this lesson</button></th>
+<th><button onclick="addRed()" id="redButton"><h2>I didnt understand this lesson</h2></button></th>
+<th><button onclick="addAmber()" id= "amberButton"><h2>I understood some of this lesson</h2></button></th>
+<th><button onclick="addGreen()" id = "greenButton"><h2>I understood all of this lesson</h2></button></th>
 </table>
 
-
-<button onclick="calcTotals()">Finish</button>
-
+<button id="finishButton" onclick="calcTotals()">Finish</button>
+<div id="resultDiv"></div>
 </body>
 </html>
