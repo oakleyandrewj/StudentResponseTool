@@ -2,8 +2,10 @@ var green = 0;
 var amber = 0;
 var red = 0;
 var total = 0;
-import { stat as _stat, appendFile, writeFile } from 'fs';
-import json2csv from 'json2csv';
+//import { stat as _stat, appendFile, writeFile } from 'fs';
+//import json2csv from 'json2csv';
+var subject = 'my Subject';
+var body = 'myBody';
 
 function addGreen() {
   green += 1;
@@ -27,8 +29,8 @@ function addAmber() {
 }
 
 function calcTotals() {
-  document.getElementById("myBody").innerHTML = 'green is '+green + ' amber is '+amber+ ' red is '+red; 
-FinishHere();
+  //document.getElementById("myBody").innerHTML = 'green is '+green + ' amber is '+amber+ ' red is '+red; 
+  FinishHere();
   //console.log(total); 
 }
           
@@ -49,34 +51,7 @@ function ClearResult(){
 }
 
 function FinishHere(){
-
-var newLine = '\r\n';
-
-var appendThis = [
-  {
-    red: '0',
-    amber: '10',
-    green: '23'
-  }
-];
-
-var toCsv = {
-  data: appendThis,
-  fields: fields,
-  header: false,
-};
-
-_stat('responses.csv', function (err, stat) {
-  if (err == null) {
-    console.log('File exists');
-
-    //write the actual data and end with newline
-    var csv = json2csv(toCsv) + newLine;
-
-    appendFile('file.csv', csv, function (err) {
-      if (err) throw err;
-      console.log('The "data to append" was appended to file!');
-    });
-  }
-});
-};
+  subject = document.getElementById("lessonName").value;
+  body = "For the lesson "+subject+" the students responded as follows: green:"+green+" amber:"+amber+" red:"+red+".";
+  window.open('mailto:test@example.com?subject='+subject+'&body='+body+'');
+}
